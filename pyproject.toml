@@ -1,0 +1,19 @@
+[project]
+name = "pd-code-reverse-component"
+version = "0.0.1"
+description = "reverse all arc number in one certain component for a link pd_code."
+authors = [
+    {name = "GGN_2015",email = "neko@jlulug.org"}
+]
+license = {text = "MIT"}
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "pd_code_sanity",
+    "pd_code_pre_nxt"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
