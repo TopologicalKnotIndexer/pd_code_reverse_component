@@ -1,6 +1,6 @@
 [project]
 name = "pd-code-reverse-component"
-version = "0.0.1"
+version = "0.0.2"
 description = "reverse all arc number in one certain component for a link pd_code."
 authors = [
     {name = "GGN_2015",email = "neko@jlulug.org"}
