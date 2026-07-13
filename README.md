@@ -1,17 +1,23 @@
-# pd_code_reverse_component
-reverse all arc number in one certain component for a link pd_code.
+# pd-code-reverse-component
 
-## Install
+Reverse the orientation of one component of a PD code.
+
+## Installation
 
 ```bash
 pip install pd-code-reverse-component
 ```
 
-## Usage
+## Quick start
 
-```python
-import pd_code_reverse_component
+`from pd_code_reverse_component import reverse_component`.
 
-pd_code = [[8,11,9,12],[12,9,13,10],[10,13,11,14],[7,14,8,1],[4,1,5,2],[2,5,3,6],[6,3,7,4]]
-print(reverse_component(pd_code, 1)) # reverse the component with arc 1
-```
+PD codes are lists of four-entry crossings. Each arc label must occur exactly twice. Functions validate their inputs and do not mutate caller-owned PD-code lists unless explicitly documented.
+
+## Development
+
+Use Python 3.10 or newer for Python packages. Build distributions with `poetry build`. Run the package's tests or examples before publishing. C++ projects require a modern standards-compliant compiler.
+
+## License
+
+MIT. See `LICENSE`.
