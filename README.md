@@ -20,7 +20,7 @@ print(reversed_pd)
 
 ## Algorithm
 
-The selected label identifies its component cycle through predecessor/successor maps. The cycle is placed in canonical order and mapped to its reverse order. Every occurrence of a component label is replaced through that bijection; labels belonging to other components remain unchanged. The operation returns a deep copy and leaves the input untouched.
+The selected label identifies its component cycle through predecessor/successor maps. The cycle is placed in canonical order and mapped to its reverse order. Every occurrence of a component label is replaced through that bijection; labels belonging to other components remain unchanged. The operation returns a deep copy and leaves the input untouched. If the selected label is absent, the unchanged deep copy is returned.
 
 ## Input conventions
 
@@ -32,12 +32,14 @@ No external software is required.
 
 ## Development
 
-Run examples and package checks before release. Python packages require Python 3.10 or newer. Build PyPI artifacts with:
+Python 3.10 or newer is required. Run tests with the two declared PD-code
+dependencies available:
 
 ```bash
-poetry check
-poetry build
+python -m unittest discover -s tests -v
 ```
+
+No PyPI publication is performed as part of repository maintenance.
 
 ## License
 
