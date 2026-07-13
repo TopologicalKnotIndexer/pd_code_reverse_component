@@ -1,6 +1,6 @@
 # pd-code-reverse-component
 
-Reverse the orientation of one component of a PD code.
+Reverse the orientation encoding of one selected PD-code component.
 
 ## Installation
 
@@ -8,15 +8,36 @@ Reverse the orientation of one component of a PD code.
 pip install pd-code-reverse-component
 ```
 
-## Quick start
+## Usage example
 
-`from pd_code_reverse_component import reverse_component`.
+```python
+from pd_code_reverse_component import reverse_component
 
-PD codes are lists of four-entry crossings. Each arc label must occur exactly twice. Functions validate their inputs and do not mutate caller-owned PD-code lists unless explicitly documented.
+pd = [[2, 3, 1, 4], [4, 1, 3, 2]]
+reversed_pd = reverse_component(pd, 1)
+print(reversed_pd)
+```
+
+## Algorithm
+
+The selected label identifies its component cycle through predecessor/successor maps. The cycle is placed in canonical order and mapped to its reverse order. Every occurrence of a component label is replaced through that bijection; labels belonging to other components remain unchanged. The operation returns a deep copy and leaves the input untouched.
+
+## Input conventions
+
+A PD code is represented as a list of four-entry crossings. Arc labels normally occur exactly twice. Public functions validate inputs and return new values rather than mutating caller-owned data unless their API explicitly says otherwise.
+
+## External software
+
+No external software is required.
 
 ## Development
 
-Use Python 3.10 or newer for Python packages. Build distributions with `poetry build`. Run the package's tests or examples before publishing. C++ projects require a modern standards-compliant compiler.
+Run examples and package checks before release. Python packages require Python 3.10 or newer. Build PyPI artifacts with:
+
+```bash
+poetry check
+poetry build
+```
 
 ## License
 
